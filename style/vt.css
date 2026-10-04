@@ -161,13 +161,28 @@ nav a[aria-current="page"] {
 }
 
 .hero {
+  position: relative;
   background: linear-gradient(135deg, var(--petrol) 0%, var(--petrol-2) 55%, #182a62 100%);
   color: var(--white);
   padding: 72px 0 0;
   overflow: hidden;
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../img/logo (2).svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 52% auto;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
 .hero-layout {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
   gap: 36px;
