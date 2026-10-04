@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/vt.css">
+    <title>Contato | Toque Fino Pinturas</title>
+  </head>
+  <body>
+    <header>
+      <div class="wrap header-wrap">
+        <a href="index.html" class="brand" aria-label="Toque Fino Pinturas">
+          <span class="brand-mark">TF</span>
+          <span class="brand-text">
+            <strong>Toque Fino</strong>
+            <small>Pinturas</small>
+          </span>
+        </a>
+
+        <nav aria-label="Principal">
+          <a href="index.html">Início</a>
+          <a href="index.html#trabalhos">Trabalhos</a>
+          <a href="contato.html" aria-current="page">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="contact-page">
+        <div class="wrap two-col">
+          <div class="contact-copy">
+            <p class="eyebrow">Solicite um orçamento</p>
+            <h1>Peça seu orçamento</h1>
+            <p>Conte o que você quer pintar e em breve vamos te responder pelo WhatsApp com a melhor solução para o seu espaço.</p>
+            <a class="phone" href="tel:+5514997452131">+55 14 99745-2131</a>
+
+            <div class="cta-row contact-row">
+              <a class="btn" href="https://wa.me/5514997452131" target="_blank" rel="noreferrer">Chamar no WhatsApp</a>
+            </div>
+
+            <p class="note">Atendemos residências e empresas em toda a região.</p>
+          </div>
+
+          <form id="f" class="contact-form">
+            <label>
+              Seu nome
+              <input name="n" required autocomplete="name" placeholder="Digite seu nome">
+            </label>
+
+            <label>
+              Telefone
+              <input name="t" type="tel" required autocomplete="tel" placeholder="(xx) xxxxx-xxxx">
+            </label>
+
+            <label>
+              Tipo de serviço
+              <select name="s">
+                <option>Pintura residencial</option>
+                <option>Pintura comercial</option>
+                <option>Outro</option>
+              </select>
+            </label>
+
+            <label>
+              Detalhes
+              <textarea name="m" rows="4" placeholder="Cômodos, tamanho, prazo e qualquer informação importante"></textarea>
+            </label>
+
+            <button class="btn" type="submit">Enviar pelo WhatsApp</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      document.getElementById('f').onsubmit = function (e) {
+        e.preventDefault();
+        var d = new FormData(this);
+        open(
+          'https://wa.me/5514997452131?text=' + encodeURIComponent(
+            'Olá! Quero um orçamento.\nNome: ' + d.get('n') + '\nTelefone: ' + d.get('t') + '\nServiço: ' + d.get('s') + '\n' + d.get('m')
+          )
+        );
+      };
+    </script>
+
+    <footer class="rodape">
+      <div class="wrap rodape-conteudo">
+        <div>
+          <h4>Toque Fino Pinturas</h4>
+          <p>Especialistas em pintura residencial e comercial com acabamento refinado, atenção aos detalhes e limpeza no final do serviço.</p>
+          <div class="redes-sociais">
+            <a href="https://wa.me/5514997452131" target="_blank" rel="noreferrer" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+
+        <div>
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="trabalhos.html">Trabalhos</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contato rápido</h4>
+          <p>☎️ +55 14 99745-2131</p>
+          <p>📍 Região de São José dos Campos / Vale do Paraíba</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
